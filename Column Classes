@@ -1,0 +1,36 @@
+/**
+Working with column classes in Genesis Framework
+**/
+
+/*
+function.php
+*/
+function one_half_class( $classes ) {
+$classes[] = 'one-half';
+global $wp_query;
+if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
+$classes[] = 'first';
+return $classes;
+}
+
+
+function one_third_class( $classes ) {
+$classes[] = 'one-third';
+global $wp_query;
+if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
+$classes[] = 'first';
+return $classes;
+}
+
+function one_fourth_class( $classes ) {
+$classes[] = 'one-fourth';
+global $wp_query;
+if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 4 )
+$classes[] = 'first';
+return $classes;
+}
+
+/*
+This goes in to the archive or category template
+*/
+add_filter('post_class', 'one_half_class');

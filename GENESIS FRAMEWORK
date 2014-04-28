@@ -1,0 +1,18 @@
+/* FUNCTION IF EXCERPT TO SHORT USE PROFILE DESCRIPTION GENESIS FRAMEWORK*/
+add_action( 'genesis_entry_content', 'minWord' );
+function minWord($content){
+global $post;
+    $content = $post->post_content;
+	   if (str_word_count($content) < 15 ){?>
+	  <p><strong><?php the_author();?></strong><br>
+	<?php echo substr(get_the_author_meta('description'),0,125); ?>... </p>
+	<p><a class="more-link" href="<?php the_permalink();?>">
+Read More
+<i class="fa fa-angle-double-right"></i>
+</a></p>
+	<?php
+	   }
+	   else{
+	   the_excerpt();
+	   }
+	   }

@@ -1,0 +1,7 @@
+/*FUNCTION FOR ALIGNMENT IMAGES
+function be_remove_image_alignment( $attributes ) {
+$attributes['class'] = str_replace( 'alignleft', 'alignnone', $attributes['class'] );
+return $attributes;
+}
+add_filter( 'genesis_attr_entry-image', 'be_remove_image_alignment' );
+*/

@@ -1,0 +1,8 @@
+/* FUNCTON FOR ADDING SCRIPT*/
+add_action( 'wp_enqueue_scripts', 'mason_script' );
+
+function mason_script() {
+    wp_enqueue_script( 'jquery-masonry' );
+	   wp_enqueue_script( 'jquery-masonry' );
+	   wp_enqueue_script( 'masonryscript', CHILD_URL . '/lib/functions/masonry-init.js');
+}

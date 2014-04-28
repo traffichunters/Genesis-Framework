@@ -1,0 +1,8 @@
+/* FUNCTION TARGET FIRST POST TITLE IN CATEGORY GENESIS FRAMEWORK*/
+add_filter( 'genesis_post_title_output', 'ac_post_title_output', 15 );
+function ac_post_title_output( $title ) {
+ global $wp_query;
+    if( 0 == $wp_query->current_post )
+$title = sprintf( '<h2 class="entry-title stickytitle" itemprop="headline">%s</h2>', apply_filters( 'genesis_post_title_text', get_the_title() ) );
+ return $title;
+}

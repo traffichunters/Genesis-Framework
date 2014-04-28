@@ -1,0 +1,7 @@
+/*FUNCTION SHORTEN EXCERPT TO GENESIS FRAMEWORK*/
+
+add_filter( 'excerpt_length', 'sp_excerpt_length' );
+function sp_excerpt_length( $length ) {
+return 25; // pull first 50 words
+}
+remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
